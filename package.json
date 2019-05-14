@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "A boilerplate project built with Node, Express and passport.js for building a password/JWT protected API server.",
   "main": "index.js",
-  "repository": "https://github.com/studyingMole/node-auth-starter.git",
+  "repository": "https://github.com/CodeSchwert/node-auth-starter.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "docker-compose up -d --build && nodemon index.js"
   },
-  "author": "Nik Ho",
-  "license": "ISC",
+  "author": "CodeSchwert (https://github.com/CodeSchwert)",
+  "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",

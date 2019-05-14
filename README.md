@@ -7,13 +7,22 @@ A boilerplate project built with Node, Express and passport.js for building a pa
 Checkout this repo, install dependencies, then start the server process with the following:
 
 ```shell
-> git clone https://github.com/studyingMole/node-auth-starter.git
-> cd node-auth-starter
-> npm install
-> npm run dev
+git clone https://github.com/CodeSchwert/node-auth-starter.git
+cd node-auth-starter
+npm install
+
+# change the secret in config.js!!
+npm run dev
 ```
 
 The API server should be running on `localhost:3090`.
+
+Remember to cleanup the mongoDB container:
+
+```shell
+# from node-auth-starter/
+docker-compose down
+```
 
 ## Routes
 
@@ -22,6 +31,7 @@ There are three routes on the API:
 - `/signup`
 - `/signin`
 - `/`
+- `/unprotected`
 
 ### **Sign-Up**
 
@@ -53,4 +63,14 @@ This is a **Protected** route and is only accessible once signed in.
 Method: GET
 Content-Type: 'application/json'
 Returns: { "Hello": "World!" }
+```
+
+### **Unprotected** (debug route)
+
+Does not require authentication.
+
+```shell
+Method: GET
+Content-Type: 'application/json'
+Returns: { "Unprotected": "Route!" }
 ```
